@@ -843,6 +843,51 @@
       color: var(--lavender);
     }
 
+    /* ── MALIK PROOF ── */
+    .malik-proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 36px auto 0;
+    }
+
+    .malik-proof-card {
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .malik-proof-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+    }
+
+    .malik-proof-card-gold {
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .malik-proof-card-gold:hover {
+      box-shadow: 0 12px 40px rgba(255, 215, 0, 0.15);
+    }
+
+    .malik-proof-img {
+      width: 100%;
+      display: block;
+    }
+
+    .malik-proof-caption {
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      color: var(--white-dim);
+      line-height: 1.5;
+      text-align: left;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .slide { padding: 48px 20px 60px; }
@@ -867,6 +912,7 @@
       .timeline::before { left: 42px; }
       .tl-dot { left: -22px; }
       .tl-dot-gold { left: -24px; }
+      .malik-proof { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1120,9 +1166,9 @@
 </section>
 
 <!-- ═══════════════ SLIDE 11: MALIK CASE STUDY ═══════════════ -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-11" style="min-height: auto; padding-top: 80px; padding-bottom: 80px;">
   <div class="slide-inner">
-    <h1>Case Study: Malik Tinsley, 19</h1>
+    <h1>Case Study: Malik, 19</h1>
     <p class="subtitle">Paid $5,000 on October 12th. Got It All Back by Christmas.</p>
 
     <!-- Timeline -->
@@ -1178,8 +1224,26 @@
       </div>
     </div>
 
+    <!-- Proof screenshots -->
+    <div class="malik-proof">
+      <div class="malik-proof-card">
+        <img src="images/malik-chats.png" alt="Malik: Glad to say I decided to invest into Sabbo's mentorship" class="malik-proof-img" />
+        <div class="malik-proof-caption">
+          <span class="gold">"Glad to say I decided to start and chose to invest into Sabbos mentorship. I have so much more work to do and hella hype to continue to put in the work"</span>
+          <br><span style="color: var(--lavender); font-size: 0.8rem;">— Malik, Dec 26, 2025</span>
+        </div>
+      </div>
+      <div class="malik-proof-card malik-proof-card-gold">
+        <img src="images/malik-payout.png" alt="Malik Amazon payout $5,000+" class="malik-proof-img" />
+        <div class="malik-proof-caption">
+          <span class="gold">Amazon payout: ~$5,000 transfer initiated Dec 26</span>
+          <br><span style="color: var(--lavender); font-size: 0.8rem;">Sabbo: "nice lil 5K... smooooth"</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Bottom stats -->
-    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 40px;">
+    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 32px;">
       <div style="text-align: center;">
         <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">75 Days</div>
         <div style="font-size: 0.85rem; color: var(--lavender);">To full ROI</div>
