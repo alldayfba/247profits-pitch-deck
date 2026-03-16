@@ -735,6 +735,114 @@
     .recap-item .recap-icon { font-size: 1.5rem; margin-bottom: 8px; }
     .recap-item .recap-label { font-size: 0.85rem; color: var(--lavender); }
 
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 32px auto 0;
+      padding-left: 80px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 62px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--purple) 0%, var(--gold) 100%);
+    }
+
+    .tl-item {
+      position: relative;
+      padding-bottom: 24px;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-date {
+      position: absolute;
+      left: -80px;
+      top: 4px;
+      width: 56px;
+      text-align: right;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--lavender);
+      letter-spacing: 0.02em;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -22px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--purple);
+      border: 2px solid var(--bg-deep);
+      box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+      z-index: 2;
+    }
+
+    .tl-dot-start {
+      background: var(--white);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    }
+
+    .tl-dot-gold {
+      background: var(--gold);
+      width: 16px;
+      height: 16px;
+      left: -24px;
+      top: 4px;
+      box-shadow: 0 0 16px rgba(255, 215, 0, 0.6);
+    }
+
+    .tl-card {
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: left;
+    }
+
+    .tl-card-gold {
+      border-color: rgba(255, 215, 0, 0.35);
+      background: rgba(255, 215, 0, 0.05);
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.08);
+    }
+
+    .tl-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .tl-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .tl-detail {
+      font-size: 0.88rem;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+
+    .tl-detail em {
+      color: var(--lavender);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .slide { padding: 48px 20px 60px; }
@@ -754,6 +862,11 @@
       .cover-hero-text { text-align: center; }
       .cover-hero-text .subheadline { text-align: center; }
       .cover-sabbo { width: 200px; max-height: 300px; }
+      .timeline { padding-left: 60px; }
+      .tl-date { left: -60px; width: 44px; font-size: 0.7rem; }
+      .timeline::before { left: 42px; }
+      .tl-dot { left: -22px; }
+      .tl-dot-gold { left: -24px; }
     }
   </style>
 </head>
@@ -1006,25 +1119,82 @@
   <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 10 / 14</div>
 </section>
 
-<!-- ═══════════════ SLIDE 11: QUALIFICATION ═══════════════ -->
+<!-- ═══════════════ SLIDE 11: MALIK CASE STUDY ═══════════════ -->
 <section class="slide" id="slide-11">
   <div class="slide-inner">
-    <h1>This Is NOT For Everyone</h1>
+    <h1>Case Study: Malik Tinsley, 19</h1>
+    <p class="subtitle">Paid $5,000 on October 12th. Got It All Back by Christmas.</p>
 
-    <div class="qual-grid">
-      <div class="qual-col">
-        <h3 class="green">This IS For You If:</h3>
-        <div class="qual-item"><span class="marker green">+</span><span>You have $5K–$20K+ to invest</span></div>
-        <div class="qual-item"><span class="marker green">+</span><span>You'll dedicate 10–20 hrs/week minimum</span></div>
-        <div class="qual-item"><span class="marker green">+</span><span>You're coachable and will follow the system</span></div>
-        <div class="qual-item"><span class="marker green">+</span><span>You want a real asset, not get-rich-quick</span></div>
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Oct 12</div>
+        <div class="tl-dot tl-dot-start"></div>
+        <div class="tl-card">
+          <div class="tl-tag" style="background: var(--purple);">ENROLLED</div>
+          <div class="tl-title">Pays $5,000 to join the Inner Circle</div>
+          <div class="tl-detail">19 years old. Making $1,700/mo at his job. No LLC. No tools. No Amazon experience. His biggest struggle: <em>"Honestly guidance, that is the major thing."</em></div>
+        </div>
       </div>
-      <div class="qual-col">
-        <h3 class="red">This Is NOT For You If:</h3>
-        <div class="qual-item"><span class="marker red">✕</span><span>You have less than $3K total capital</span></div>
-        <div class="qual-item"><span class="marker red">✕</span><span>You want passive income with zero effort</span></div>
-        <div class="qual-item"><span class="marker red">✕</span><span>You're not willing to be coached</span></div>
-        <div class="qual-item"><span class="marker red">✕</span><span>You expect results without work</span></div>
+
+      <div class="tl-item">
+        <div class="tl-date">Oct 28</div>
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-tag" style="background: var(--purple-mid);">FUNDING</div>
+          <div class="tl-title">Approved for $5,000 in business credit</div>
+          <div class="tl-detail">Used our funding systems to get inventory capital — didn't need to save for months first.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Nov 16</div>
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-tag" style="background: var(--green); color: #000;">FIRST SALES</div>
+          <div class="tl-title">First Amazon payouts start hitting</div>
+          <div class="tl-detail">34 days after enrolling. Sourcing products from local stores using our deal flow systems.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Dec 14</div>
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-tag" style="background: var(--green); color: #000;">SCALING</div>
+          <div class="tl-title">On track for $10K revenue month</div>
+          <div class="tl-detail">"This will be my last replenish — 10K rev month, then I'm focusing on more sourcing."</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Dec 26</div>
+        <div class="tl-dot tl-dot-gold"></div>
+        <div class="tl-card tl-card-gold">
+          <div class="tl-tag" style="background: var(--gold); color: #000;">PAID BACK</div>
+          <div class="tl-title gold" style="font-size: 1.3rem;">Amazon deposits $5,000+ back into his account</div>
+          <div class="tl-detail">The day after Christmas. 75 days after paying to join. The program has paid for itself — and it's only the beginning.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom stats -->
+    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 40px;">
+      <div style="text-align: center;">
+        <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">75 Days</div>
+        <div style="font-size: 0.85rem; color: var(--lavender);">To full ROI</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">$10K+</div>
+        <div style="font-size: 0.85rem; color: var(--lavender);">First big month</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">19</div>
+        <div style="font-size: 0.85rem; color: var(--lavender);">Years old</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">$0</div>
+        <div style="font-size: 0.85rem; color: var(--lavender);">Prior experience</div>
       </div>
     </div>
   </div>
