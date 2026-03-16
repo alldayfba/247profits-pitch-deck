@@ -15,9 +15,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-deep: #0D0618;
-      --bg-slide: #1A0A2E;
-      --bg-card: rgba(107, 47, 160, 0.15);
+      --bg-deep: #060211;
+      --bg-slide: #0E0620;
+      --bg-card: rgba(107, 47, 160, 0.12);
       --purple: #7C3AED;
       --purple-dark: #2D0A3D;
       --purple-mid: #6B2FA0;
@@ -41,6 +41,19 @@
       overflow-x: hidden;
     }
 
+    /* ── GALAXY GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
     /* ── SLIDE CONTAINER ── */
     .slide {
       min-height: 100vh;
@@ -50,7 +63,46 @@
       align-items: center;
       padding: 60px 24px 40px;
       position: relative;
-      background: linear-gradient(180deg, var(--bg-slide) 0%, var(--bg-deep) 100%);
+      background: transparent;
+      z-index: 1;
+    }
+
+    /* Purple nebula glow — alternates position per slide */
+    .slide::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .slide:nth-child(odd)::after { top: -100px; right: -200px; }
+    .slide:nth-child(even)::after { bottom: -100px; left: -200px; }
+
+    /* Star field — tiny dots */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.15; }
+      100% { opacity: 0.6; }
     }
 
     .slide::before {
@@ -61,6 +113,7 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--purple) 0%, var(--purple-dark) 100%);
+      z-index: 2;
     }
 
     .slide-inner {
@@ -217,17 +270,20 @@
     }
 
     .icon-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(107, 47, 160, 0.25);
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       border-radius: 16px;
       padding: 32px 24px;
       text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
 
     .icon-card:hover {
       transform: translateY(-4px);
       border-color: var(--purple);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
     }
 
     .icon-card .icon {
@@ -256,11 +312,19 @@
     }
 
     .feature-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(107, 47, 160, 0.2);
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       border-radius: 14px;
       padding: 28px 24px;
       text-align: left;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
     }
 
     .feature-card .feat-icon {
@@ -317,7 +381,10 @@
       padding: 40px 48px;
       max-width: 700px;
       margin: 32px auto;
-      background: rgba(255, 215, 0, 0.04);
+      background: rgba(255, 215, 0, 0.03);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.06), inset 0 0 40px rgba(255, 215, 0, 0.02);
     }
 
     .guarantee-box h3 {
@@ -535,6 +602,33 @@
       margin-bottom: 32px;
     }
 
+    .cover-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .cover-hero-text {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .cover-hero-img { position: relative; }
+
+    .cover-sabbo {
+      width: 280px;
+      border-radius: 20px;
+      object-fit: cover;
+      max-height: 420px;
+      box-shadow:
+        0 0 40px rgba(124, 58, 237, 0.3),
+        0 0 80px rgba(124, 58, 237, 0.15),
+        0 20px 60px rgba(0,0,0,0.5);
+      border: 2px solid rgba(124, 58, 237, 0.25);
+    }
+
     /* ── IMAGES ── */
     .logo-img {
       width: 200px;
@@ -559,11 +653,19 @@
     }
 
     .result-card-img {
-      background: var(--bg-card);
-      border: 1px solid rgba(107, 47, 160, 0.2);
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       border-radius: 14px;
       overflow: hidden;
       text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .result-card-img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
     }
 
     .result-card-img img {
@@ -618,12 +720,17 @@
     }
 
     .recap-item {
-      background: var(--bg-card);
-      border: 1px solid rgba(107, 47, 160, 0.2);
+      background: rgba(107, 47, 160, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(124, 58, 237, 0.2);
       border-radius: 12px;
       padding: 20px 16px;
       text-align: center;
+      transition: transform 0.2s;
     }
+
+    .recap-item:hover { transform: translateY(-2px); }
 
     .recap-item .recap-icon { font-size: 1.5rem; margin-bottom: 8px; }
     .recap-item .recap-label { font-size: 0.85rem; color: var(--lavender); }
@@ -643,22 +750,34 @@
       .pillar1-layout img { margin: 0 auto; }
       .closing-layout { flex-direction: column; text-align: center; }
       .recap-grid { grid-template-columns: 1fr; }
+      .cover-hero { flex-direction: column; text-align: center; }
+      .cover-hero-text { text-align: center; }
+      .cover-hero-text .subheadline { text-align: center; }
+      .cover-sabbo { width: 200px; max-height: 300px; }
     }
   </style>
 </head>
 <body>
+
+<!-- Star field -->
+<div class="stars" id="starField"></div>
 
 <div class="progress-bar" id="progressBar"></div>
 
 <!-- ═══════════════ SLIDE 1: COVER ═══════════════ -->
 <section class="slide" id="slide-1">
   <div class="slide-inner">
-    <div style="margin-bottom: 32px;">
-      <img src="images/slide-p1-img0.png" alt="24/7 Profits" class="logo-img" />
+    <div class="cover-hero">
+      <div class="cover-hero-text">
+        <img src="images/slide-p1-img0.png" alt="24/7 Profits" class="logo-img" style="margin-bottom: 24px;" />
+        <h1 class="cover-title">24/7 PROFITS</h1>
+        <div class="cover-sub">The Inner Circle</div>
+        <p class="subheadline" style="margin: 0 0 0; text-align: left;">How Beginners Are Building $10K–$30K/Month Amazon Businesses in 90 Days Using AI — Without Prior Experience</p>
+      </div>
+      <div class="cover-hero-img">
+        <img src="images/slide-p12-img1.png" alt="Sabbo — 24/7 Profits" class="cover-sabbo" />
+      </div>
     </div>
-    <h1 class="cover-title">24/7 PROFITS</h1>
-    <div class="cover-sub">The Inner Circle</div>
-    <p class="subheadline">How Beginners Are Building $10K–$30K/Month Amazon Businesses in 90 Days Using AI — Without Prior Experience</p>
 
     <div class="proof-bar">
       <span class="proof-item">$50M+ in Student-Generated Amazon Sales</span>
@@ -1055,6 +1174,25 @@
   }
 
   updateUI();
+
+  // Generate star field
+  (function() {
+    var field = document.getElementById('starField');
+    var count = 120;
+    var pageH = document.documentElement.scrollHeight;
+    for (var i = 0; i < count; i++) {
+      var s = document.createElement('span');
+      s.style.left = (Math.random() * 100) + '%';
+      s.style.top = (Math.random() * pageH) + 'px';
+      var size = Math.random() * 2 + 1;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.animationDelay = (Math.random() * 4) + 's';
+      s.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      if (Math.random() > 0.7) s.style.background = 'rgba(183, 148, 224, 0.5)';
+      field.appendChild(s);
+    }
+  })();
 </script>
 
 </body>
