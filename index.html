@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24/7 Profits — The Inner Circle | AI Amazon Scaling</title>
+  <meta name="description" content="How Beginners Are Building $10K-$30K/Month Amazon Businesses in 90 Days Using AI." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:title" content="24/7 Profits — The Inner Circle" />
+  <meta property="og:description" content="AI Amazon Scaling — Zero to Profitable in 90 Days" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep: #0D0618;
+      --bg-slide: #1A0A2E;
+      --bg-card: rgba(107, 47, 160, 0.15);
+      --purple: #7C3AED;
+      --purple-dark: #2D0A3D;
+      --purple-mid: #6B2FA0;
+      --lavender: #B794E0;
+      --gold: #FFD700;
+      --gold-dim: #D4A017;
+      --white: #FFFFFF;
+      --white-dim: rgba(255,255,255,0.7);
+      --green: #4ADE80;
+      --red: #FF6B6B;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SLIDE CONTAINER ── */
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 24px 40px;
+      position: relative;
+      background: linear-gradient(180deg, var(--bg-slide) 0%, var(--bg-deep) 100%);
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--purple) 0%, var(--purple-dark) 100%);
+    }
+
+    .slide-inner {
+      max-width: 960px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--lavender);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .subheadline {
+      color: var(--white-dim);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .quote {
+      font-style: italic;
+      color: var(--lavender);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 40px auto 0;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .gold { color: var(--gold); }
+    .lavender { color: var(--lavender); }
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    .strikethrough { text-decoration: line-through; color: rgba(255,255,255,0.35); }
+
+    /* ── BULLETS ── */
+    .bullets {
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    .bullets li {
+      padding: 12px 0;
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      border-bottom: 1px solid rgba(107, 47, 160, 0.2);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .bullets li:last-child { border-bottom: none; }
+
+    .bullets .bullet-marker {
+      color: var(--lavender);
+      font-weight: 700;
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+    }
+
+    .bullets strong { color: var(--white); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comparison .col-header {
+      background: rgba(107, 47, 160, 0.3);
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .comparison .col-header.old { color: var(--red); }
+    .comparison .col-header.new { color: var(--green); }
+
+    .comparison .cell {
+      background: rgba(107, 47, 160, 0.1);
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      color: var(--white-dim);
+      text-align: left;
+    }
+
+    /* ── PHASE ITEMS ── */
+    .phases {
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .phase {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(107, 47, 160, 0.2);
+    }
+
+    .phase:last-child { border-bottom: none; }
+
+    .phase-label {
+      color: var(--lavender);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .phase-desc {
+      color: var(--white-dim);
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+
+    /* ── ICON GRID ── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 800px;
+      margin: 32px auto 0;
+    }
+
+    .icon-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(107, 47, 160, 0.25);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+    }
+
+    .icon-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .icon-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .icon-card p {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+
+    /* ── FEATURE GRID (AI slide) ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 32px auto 0;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(107, 47, 160, 0.2);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: left;
+    }
+
+    .feature-card .feat-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      line-height: 1.5;
+    }
+
+    /* ── QUALIFICATION COLUMNS ── */
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 750px;
+      margin: 32px auto 0;
+      text-align: left;
+    }
+
+    .qual-col h3 {
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+    }
+
+    .qual-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 1rem;
+      color: var(--white-dim);
+    }
+
+    .qual-item .marker {
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ── GUARANTEE BOX ── */
+    .guarantee-box {
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 40px 48px;
+      max-width: 700px;
+      margin: 32px auto;
+      background: rgba(255, 215, 0, 0.04);
+    }
+
+    .guarantee-box h3 {
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .guarantee-box p {
+      color: var(--white-dim);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ── PRICE ── */
+    .price-big {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin: 16px 0;
+    }
+
+    .price-old {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+    }
+
+    /* ── CTA BUTTON ── */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 100%);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 20px 64px;
+      border-radius: 12px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(124, 58, 237, 0.4);
+      margin: 32px 0;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.6);
+    }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof-bar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      margin-top: 40px;
+      border-top: 1px solid rgba(107, 47, 160, 0.3);
+      border-bottom: 1px solid rgba(107, 47, 160, 0.3);
+    }
+
+    .proof-item {
+      color: var(--lavender);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ── RESULTS GRID ── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 32px auto;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(107, 47, 160, 0.2);
+      border-radius: 14px;
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .result-card .result-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .result-card .result-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .result-card .result-desc {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      line-height: 1.4;
+    }
+
+    .results-extra {
+      color: var(--lavender);
+      font-size: 0.95rem;
+      margin-top: 24px;
+    }
+
+    .disclaimer {
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      margin-top: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── BONUS CARD ── */
+    .bonus-highlight {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 32px;
+    }
+
+    /* ── LOGO ── */
+    .logo-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--lavender);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 40px;
+      opacity: 0.6;
+    }
+
+    /* ── FOOTER ── */
+    .slide-footer {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(183, 148, 224, 0.4);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── NAV ── */
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 6, 24, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(107, 47, 160, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 24px;
+      z-index: 100;
+    }
+
+    .nav-bar button {
+      background: var(--bg-card);
+      border: 1px solid rgba(107, 47, 160, 0.3);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-bar button:hover {
+      background: rgba(124, 58, 237, 0.3);
+    }
+
+    .nav-bar .slide-counter {
+      color: var(--lavender);
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--gold));
+      z-index: 101;
+      transition: width 0.3s ease;
+    }
+
+    /* ── COVER SPECIFIC ── */
+    .cover-title {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .cover-sub {
+      color: var(--lavender);
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .slide { padding: 48px 20px 60px; }
+      .comparison { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .qual-grid { grid-template-columns: 1fr; gap: 24px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .guarantee-box { padding: 28px 24px; }
+      .cta-btn { padding: 18px 40px; font-size: 1.1rem; }
+      .icon-grid { grid-template-columns: 1fr; }
+      .proof-bar { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ═══════════════ SLIDE 1: COVER ═══════════════ -->
+<section class="slide" id="slide-1">
+  <div class="slide-inner">
+    <div style="margin-bottom: 32px;">
+      <span style="font-size: 3rem;">📦</span>
+    </div>
+    <h1 class="cover-title">24/7 PROFITS</h1>
+    <div class="cover-sub">The Inner Circle</div>
+    <p class="subheadline">How Beginners Are Building $10K–$30K/Month Amazon Businesses in 90 Days Using AI — Without Prior Experience</p>
+
+    <div class="proof-bar">
+      <span class="proof-item">$50M+ in Student-Generated Amazon Sales</span>
+      <span class="proof-item">700+ Active Sellers</span>
+      <span class="proof-item">AI-Powered</span>
+    </div>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 1 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 2: THE PROBLEM ═══════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-inner">
+    <h1>Why 95% of Amazon Sellers Fail</h1>
+
+    <ul class="bullets">
+      <li><span class="bullet-marker">01</span><span>They pick the wrong products — <strong>guessing instead of using AI and data</strong></span></li>
+      <li><span class="bullet-marker">02</span><span>They follow <strong>outdated 2019–2020 strategies</strong> from YouTube</span></li>
+      <li><span class="bullet-marker">03</span><span>They have <strong>no one to tell them what they're doing wrong</strong> until it's too late</span></li>
+      <li><span class="bullet-marker">04</span><span>They buy a <strong>$500 course</strong>, get stuck, and quit</span></li>
+      <li><span class="bullet-marker">05</span><span>They don't have a system — they have <strong>scattered information</strong></span></li>
+    </ul>
+
+    <p class="quote">"Information isn't the problem. Everyone has access to information.<br>The problem is implementation without a guide."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 2 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 3: THE AI SHIFT ═══════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-inner">
+    <h1>The Old Way Is Dead.<br>AI Amazon Scaling Is the New Standard.</h1>
+
+    <div class="comparison" style="margin-top: 32px;">
+      <div class="col-header old">The Old Way</div>
+      <div class="col-header new">AI Amazon Scaling</div>
+      <div class="cell">Manual product research (10+ hours/week)</div>
+      <div class="cell">AI finds winning products in <strong>minutes</strong></div>
+      <div class="cell">Guessing which products will sell</div>
+      <div class="cell">Data-driven filters — <strong>know BEFORE you buy</strong></div>
+      <div class="cell">Watching YouTube hoping for answers</div>
+      <div class="cell">Coached by operators selling <strong>$20K–$50K/mo</strong></div>
+      <div class="cell">Competing on price with everyone else</div>
+      <div class="cell">AI spots opportunities <strong>others can't see</strong></div>
+      <div class="cell">6-month timeline to first sale</div>
+      <div class="cell">Students making first sales in <strong>7–14 days</strong></div>
+    </div>
+
+    <p class="quote">"While everyone else is doing Amazon the old way, we're using AI to find products they'll never find."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 3 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 4: THE SYSTEM ═══════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-inner">
+    <h1>The 24/7 Amazon Operating System</h1>
+    <p class="subtitle">A 5-Phase, AI-Powered, Coach-Led System: Zero to Profitable in 90 Days</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-label">Phase 1: Foundation</div>
+        <div class="phase-desc">Account setup, compliance, business entity, funding systems</div>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Phase 2: Product Research</div>
+        <div class="phase-desc">AI-driven product selection using proprietary filters (not guesswork)</div>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Phase 3: Sourcing & Launch</div>
+        <div class="phase-desc">Supplier negotiation, listing optimization, ranking strategy</div>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Phase 4: PPC & Scale</div>
+        <div class="phase-desc">Advertising setup, ACoS optimization, scaling profitable campaigns</div>
+      </div>
+      <div class="phase">
+        <div class="phase-label">Phase 5: Growth</div>
+        <div class="phase-desc">Second product, wholesale, brand registry, brand-direct advertising</div>
+      </div>
+    </div>
+
+    <p class="quote">"This isn't a course you watch alone. It's a system you're guided through, step by step, with coaches actively selling on Amazon right now."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 4 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 5: PILLAR 1 ═══════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-inner">
+    <h1>Pillar 1: Education & Coaching</h1>
+    <p class="subtitle">5 Live Coaching Calls Per Week</p>
+
+    <div class="icon-grid">
+      <div class="icon-card">
+        <div class="icon">🎯</div>
+        <h3>Mentorship</h3>
+        <p>2x/week group sessions with Sabbo — 10–15 max per session, personalized to your level</p>
+      </div>
+      <div class="icon-card">
+        <div class="icon">🔧</div>
+        <h3>Specialist Coaches</h3>
+        <p>3x/week — sourcing, PPC, listings. Each coach doing $20K–$50K/mo on Amazon</p>
+      </div>
+      <div class="icon-card">
+        <div class="icon">📚</div>
+        <h3>Full Course Library</h3>
+        <p>Complete A-Z Amazon FBA course. All calls recorded — never miss a session</p>
+      </div>
+    </div>
+
+    <p class="quote" style="color: var(--gold);">"You're learning from operators, not just educators. Sabbo and every coach are actively selling on Amazon every single day."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 5 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 6: PILLAR 2 ═══════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-inner">
+    <h1>Pillar 2: Done-For-You Systems</h1>
+    <p class="subtitle">We Removed Every Bottleneck</p>
+
+    <ul class="bullets">
+      <li><span class="bullet-marker">🤖</span><span><strong>Daily Profitable Product Leads</strong> — Our team sends you vetted product opportunities every single day</span></li>
+      <li><span class="bullet-marker">⚡</span><span><strong>Custom AI Sourcing Tool</strong> — Built by our team to find winning products in minutes, not hours</span></li>
+      <li><span class="bullet-marker">🔓</span><span><strong>Ungating Scripts & Templates</strong> — Exact scripts for restricted categories on Amazon</span></li>
+      <li><span class="bullet-marker">📦</span><span><strong>Prep Center Access</strong> — Ship inventory without using your garage</span></li>
+      <li><span class="bullet-marker">💳</span><span><strong>Funding Systems</strong> — Access $10K–$70K+ in business credit for inventory</span></li>
+      <li><span class="bullet-marker">🤝</span><span><strong>Supplier Database</strong> — Vetted relationships, ready to go</span></li>
+    </ul>
+
+    <p class="quote">"Most programs give you information and wish you luck. We built the systems so you don't start from scratch."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 6 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 7: PILLAR 3 ═══════════════ -->
+<section class="slide" id="slide-7">
+  <div class="slide-inner">
+    <h1>Pillar 3: Community & Support</h1>
+    <p class="subtitle">700+ Active Sellers &nbsp;|&nbsp; 10–30 Minute Response Times</p>
+
+    <ul class="bullets">
+      <li><span class="bullet-marker">💬</span><span><strong>Private Discord Community</strong> — Sharing wins, strategies, product ideas daily</span></li>
+      <li><span class="bullet-marker">🔒</span><span><strong>2 Private Support Channels</strong> — One with Sabbo, one with coaches</span></li>
+      <li><span class="bullet-marker">⏱️</span><span><strong>Average Response Time:</strong> 10–30 minutes (not days)</span></li>
+      <li><span class="bullet-marker">👥</span><span><strong>Peer Network</strong> — Daily accountability and motivation from people on the same path</span></li>
+      <li><span class="bullet-marker">🏆</span><span><strong>Weekly Wins Channel</strong> — See what's working RIGHT NOW in the market</span></li>
+    </ul>
+
+    <p class="quote">"You're never stuck. You're never alone. The community is your unfair advantage."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 7 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 8: THE AI ADVANTAGE ═══════════════ -->
+<section class="slide" id="slide-8">
+  <div class="slide-inner">
+    <h1>What AI Amazon Scaling Looks Like in Practice</h1>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feat-icon">🧠</div>
+        <h3>AI Product Discovery</h3>
+        <p>Our proprietary AI scans thousands of products and surfaces profitable opportunities — while other sellers are still scrolling manually.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📊</div>
+        <h3>Data-Driven Decisions</h3>
+        <p>Every product decision backed by real-time data: price history, sales velocity, competition density, profit margins. No guessing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">⚡</div>
+        <h3>10x Faster Research</h3>
+        <p>What takes manual sellers 10+ hours per week, our students do in under 1 hour using AI-powered workflows.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🎯</div>
+        <h3>Daily Curated Leads</h3>
+        <p>Our team + AI systems deliver vetted product leads to your inbox every morning. You pick, we ship.</p>
+      </div>
+    </div>
+
+    <p class="quote">"AI is changing Amazon selling RIGHT NOW. The sellers who adopt AI first will dominate. The ones who don't will get left behind."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 8 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 9: BONUS ═══════════════ -->
+<section class="slide" id="slide-9">
+  <div class="slide-inner">
+    <h1>Bonus: Brand-Direct Income Stream</h1>
+
+    <p class="subheadline" style="margin-top: 24px;">Once your Amazon business is running, we also teach you how to offer brand-direct advertising services.</p>
+
+    <p class="subheadline">The same strategies our advanced students use to add an additional <strong style="color: var(--white);">$3K–$10K/month</strong> on top of their Amazon revenue.</p>
+
+    <p class="bonus-highlight">Included at no extra cost.</p>
+
+    <p class="quote">"This is a second business built on top of the skills you already learned inside the program."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 9 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 10: RESULTS ═══════════════ -->
+<section class="slide" id="slide-10">
+  <div class="slide-inner">
+    <h1>Real Students. Real Results.</h1>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-icon">🖍️</div>
+        <div class="result-number">$10K</div>
+        <div class="result-desc"><strong>Xavier</strong><br>$0 to $10K in 7 Days<br>Selling Crayons</div>
+      </div>
+      <div class="result-card">
+        <div class="result-icon">📈</div>
+        <div class="result-number">$27K</div>
+        <div class="result-desc"><strong>Students</strong><br>First Sales to<br>$27K Profit Week</div>
+      </div>
+      <div class="result-card">
+        <div class="result-icon">🎉</div>
+        <div class="result-number">Day 1</div>
+        <div class="result-desc"><strong>Grace</strong><br>2 Years No Sales →<br>$70 First Day With Us</div>
+      </div>
+    </div>
+
+    <p class="results-extra">Brandon ($48K/mo) &nbsp;|&nbsp; Jeff ($188K/yr) &nbsp;|&nbsp; Diaz ($52K in 9 days)</p>
+
+    <p class="disclaimer">Results require work. Not everyone will see the same numbers. But every student who followed the system saw results.</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 10 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 11: QUALIFICATION ═══════════════ -->
+<section class="slide" id="slide-11">
+  <div class="slide-inner">
+    <h1>This Is NOT For Everyone</h1>
+
+    <div class="qual-grid">
+      <div class="qual-col">
+        <h3 class="green">This IS For You If:</h3>
+        <div class="qual-item"><span class="marker green">+</span><span>You have $5K–$20K+ to invest</span></div>
+        <div class="qual-item"><span class="marker green">+</span><span>You'll dedicate 10–20 hrs/week minimum</span></div>
+        <div class="qual-item"><span class="marker green">+</span><span>You're coachable and will follow the system</span></div>
+        <div class="qual-item"><span class="marker green">+</span><span>You want a real asset, not get-rich-quick</span></div>
+      </div>
+      <div class="qual-col">
+        <h3 class="red">This Is NOT For You If:</h3>
+        <div class="qual-item"><span class="marker red">✕</span><span>You have less than $3K total capital</span></div>
+        <div class="qual-item"><span class="marker red">✕</span><span>You want passive income with zero effort</span></div>
+        <div class="qual-item"><span class="marker red">✕</span><span>You're not willing to be coached</span></div>
+        <div class="qual-item"><span class="marker red">✕</span><span>You expect results without work</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 11 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 12: INVESTMENT ═══════════════ -->
+<section class="slide" id="slide-12">
+  <div class="slide-inner">
+    <h1>The Investment</h1>
+
+    <p class="price-old">Normal Price: $10,000</p>
+    <p class="price-big">2026 Price: $5,000</p>
+    <p class="subtitle">Payment Plans Available</p>
+
+    <div class="guarantee-box" style="border-color: rgba(107,47,160,0.4); background: rgba(107,47,160,0.08);">
+      <p style="color: var(--gold); font-style: italic; font-size: 1.1rem;">"One successful product launch can generate $5K–$20K in the first 30–60 days. The program pays for itself with your first win."</p>
+    </div>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 12 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 13: GUARANTEE ═══════════════ -->
+<section class="slide" id="slide-13">
+  <div class="slide-inner">
+    <h1>Our Promise: We Don't Quit Until You Win</h1>
+
+    <div class="guarantee-box">
+      <h3>THE 24/7 PROFITS GUARANTEE</h3>
+      <p>If you follow the system and don't generate $10,000 in revenue within 6 months, we extend your access and continue working with you — at no additional cost — until you do.</p>
+    </div>
+
+    <p class="quote" style="margin-top: 32px;">"We're not here to sell you a program and disappear. We succeed when you succeed."</p>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 13 / 14</div>
+</section>
+
+<!-- ═══════════════ SLIDE 14: CTA ═══════════════ -->
+<section class="slide" id="slide-14">
+  <div class="slide-inner">
+    <h1>Ready to Build Your Amazon Business?</h1>
+
+    <p class="subheadline">Book your strategy call below. We'll walk you through the program, answer your questions, and build a personalized roadmap for your first 90 days.</p>
+
+    <a href="#" class="cta-btn" id="ctaButton">BOOK YOUR CALL NOW</a>
+
+    <p class="lavender" style="font-size: 0.95rem; margin-top: 8px;">We only onboard a limited number of new students per month to maintain coaching quality.</p>
+
+    <div class="logo-text" style="margin-top: 48px;">📦 &nbsp; 24/7 PROFITS</div>
+  </div>
+  <div class="slide-footer">24/7 Profits Inner Circle &nbsp;|&nbsp; AI AMAZON SCALING &nbsp;|&nbsp; 14 / 14</div>
+</section>
+
+<!-- ═══════════════ NAVIGATION BAR ═══════════════ -->
+<nav class="nav-bar" id="navBar">
+  <button onclick="prevSlide()" id="prevBtn">← Prev</button>
+  <span class="slide-counter" id="slideCounter">1 / 14</span>
+  <button onclick="nextSlide()" id="nextBtn">Next →</button>
+</nav>
+
+<script>
+  const TOTAL = 14;
+  let current = 1;
+
+  function goToSlide(n) {
+    if (n < 1 || n > TOTAL) return;
+    current = n;
+    document.getElementById('slide-' + n).scrollIntoView({ behavior: 'smooth' });
+    updateUI();
+  }
+
+  function nextSlide() { goToSlide(current + 1); }
+  function prevSlide() { goToSlide(current - 1); }
+
+  function updateUI() {
+    document.getElementById('slideCounter').textContent = current + ' / ' + TOTAL;
+    document.getElementById('progressBar').style.width = ((current / TOTAL) * 100) + '%';
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      prevSlide();
+    }
+  });
+
+  // Scroll-based slide detection
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const num = parseInt(id.replace('slide-', ''));
+        if (num) {
+          current = num;
+          updateUI();
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  for (let i = 1; i <= TOTAL; i++) {
+    observer.observe(document.getElementById('slide-' + i));
+  }
+
+  updateUI();
+</script>
+
+</body>
+</html>
