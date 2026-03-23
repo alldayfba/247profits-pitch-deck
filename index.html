@@ -1426,8 +1426,10 @@
   <button onclick="prevSlide()" id="prevBtn">← Prev</button>
   <span class="slide-counter" id="slideCounter">1 / 15</span>
   <button onclick="nextSlide()" id="nextBtn">Next →</button>
-  <button onclick="showDownsell()" id="downsellBtn" style="background:rgba(255,152,0,0.15);border-color:rgba(255,152,0,0.4);color:#ff9800;margin-left:8px;">Downsell</button>
 </nav>
+
+<!-- Hidden downsell trigger — small dot in bottom-left corner, only closer knows -->
+<div onclick="showDownsell()" style="position:fixed;bottom:8px;left:8px;width:12px;height:12px;border-radius:50%;background:rgba(124,58,237,0.15);cursor:pointer;z-index:9999;opacity:0.3;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.3'"></div>
 
 <script>
   const TOTAL = 15;
